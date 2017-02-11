@@ -28,7 +28,7 @@ public class MyAccount extends Fragment {
 
         initCollapsingToolbar();
         try {
-            Glide.with(getContext()).load(R.drawable.cover).into((ImageView) rootView.findViewById(R.id.backdrop));
+            Glide.with(getContext()).load(R.drawable.cover_others).into((ImageView) rootView.findViewById(R.id.backdrop));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,8 +50,8 @@ public class MyAccount extends Fragment {
                 (CollapsingToolbarLayout) rootView.findViewById(R.id.collapsing_toolbar);
         TextView title = (TextView) rootView.findViewById(R.id.title_collapsable);
         TextView subtitle = (TextView) rootView.findViewById(R.id.subtitle_collapsable);
-        title.setText("Your Inventory");
-        subtitle.setText("All your products");
+        title.setText("Your Account");
+        subtitle.setText("Manage everything here");
 
 
         collapsingToolbar.setTitle(" ");
