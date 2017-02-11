@@ -1,5 +1,6 @@
 package com.hashinclude.medex.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,9 +16,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.hashinclude.medex.Dosage;
 import com.hashinclude.medex.R;
 import com.hashinclude.medex.fragments.Home;
-import com.hashinclude.medex.fragments.Medicines;
 import com.hashinclude.medex.fragments.MyAccount;
 import com.hashinclude.medex.fragments.Prescriptions;
 import com.hashinclude.medex.fragments.Settings;
@@ -107,10 +108,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             public void onClick(View view) {
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
-                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.content_frame, new Medicines());
-                ft.commit();
-
+                Intent intent = new Intent(MainActivity.this, Dosage.class);
+                startActivity(intent);
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
                 drawer.closeDrawer(GravityCompat.START);
             }

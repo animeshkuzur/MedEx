@@ -31,7 +31,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/divider"
-            android:orientation="vertical">
+            android:orientation="vertical"
+
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            >
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -75,7 +78,9 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#c0c0c0" />
+                android:background="#c0c0c0"
+                android:layout_marginTop="8dp"
+                />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -106,7 +111,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Continue for how many weeks?"
-                android:id="@+id/input_weeks"/>
+                android:id="@+id/input_weeks"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="6dp"
+                />
         </LinearLayout>
 
     </RelativeLayout>
