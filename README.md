@@ -21,8 +21,8 @@ It has two folders: laravel and MedExApp.<br>
 ## Prerequisites
 SDK tools 25.0.1 have been used in Android Studio.<br>
 External libraries which have been used:<br>
-1. Glide
-2. Volley
+1. Glide<br>
+2. Volley<br>
 
 ### Authors
 * Animesh Kuzur
