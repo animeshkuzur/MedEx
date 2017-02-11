@@ -19,8 +19,8 @@ It has two folders: laravel and MedExApp.<br>
 **MedExApp**: This is the Android Studio based project. To run the app directly, there is a sample available in the build folder.<br>
 
 ## Prerequisites
-SDK tools 25.0.1 have been used in Android Studio.
-External libraries which have been used:
+SDK tools 25.0.1 have been used in Android Studio.<br>
+External libraries which have been used:<br>
 1. Glide
 2. Volley
 
