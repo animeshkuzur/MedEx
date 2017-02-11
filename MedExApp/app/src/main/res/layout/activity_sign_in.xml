@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context="com.hashinclude.medex.SignIn">
+    tools:context="com.hashinclude.medex.activities.SignIn">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -46,9 +46,28 @@
             android:layout_below="@+id/input_password"
             android:layout_alignParentRight="true"
             android:id="@+id/sign_in_done"/>
-
+        <!--<RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sign_in_done"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:id="@+id/horizontal_ruler">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#5111"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OR"
+            android:background="#fff"
+            android:padding="5dp"
+            android:layout_centerHorizontal="true"/>
+        </RelativeLayout> -->
     </RelativeLayout>
-    
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

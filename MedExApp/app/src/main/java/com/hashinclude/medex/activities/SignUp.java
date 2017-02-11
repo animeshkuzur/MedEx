@@ -1,9 +1,8 @@
-package com.hashinclude.medex;
+package com.hashinclude.medex.activities;
 
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +12,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.hashinclude.medex.Constants;
+import com.hashinclude.medex.MySingleton;
+import com.hashinclude.medex.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,19 +43,21 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 StringRequest myReq = new StringRequest(Request.Method.POST,
-                        "http://192.168.43.201/MedEx/public/api/register",
+                        Constants.BASE_URL+"MedEx/laravel/public/api/register",
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
                                 try {
                                     JSONObject jO = new JSONObject(response);
                                     if (jO.has("info")){
-                                        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SignIn.this);
-                                        SharedPreferences.Editor editor = sp.edit();
-                                        editor.putString("token", jO.getString("token"));
-                                        editor.putString("name", jO.getJSONArray("info").getJSONObject(0).getString("name"));
-                                        editor.apply();
-                                        Toast.makeText(SignIn.this, sp.getString("name","default")+" success", Toast.LENGTH_SHORT).show();
+                                        if(jO.getString("info").contentEquals("user_registered")){
+
+                                            Toast.makeText(SignUp.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                                            Intent intent = new Intent(SignUp.this, SignIn.class);
+                                            startActivity(intent);
+                                            finish();
+
+                                        }
                                     }
                                 } catch (JSONException ignored) {
                                 }
@@ -65,10 +69,16 @@ public class SignUp extends AppCompatActivity {
                             public void onErrorResponse(VolleyError error) {
                                 //Log.i("k", new String(error.networkResponse.data));
                                 try {
-                                    if(new JSONObject(new String(error.networkResponse.data)).getString("error").contentEquals("invalid credentials")){
-                                        Toast.makeText(SignIn.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-                                    } else{
-                                        Toast.makeText(SignIn.this, "Something went wrong", Toast.LENGTH_SHORT).show();}
+                                    if(error.networkResponse == null || error.networkResponse.data == null){
+                                        Toast.makeText(SignUp.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else if(new JSONObject(new String(error.networkResponse.data)).has("error")){
+                                        if(new JSONObject(new String(error.networkResponse.data)).getString("error").contentEquals("credentials_exists")){
+                                            Toast.makeText(SignUp.this, "Credentials Exist", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                     else{
+                                        Toast.makeText(SignUp.this, "Something went wrong", Toast.LENGTH_SHORT).show();}
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -78,6 +88,10 @@ public class SignUp extends AppCompatActivity {
                         Map<String, String> params = new HashMap<String, String>();
                         params.put("email", input_email.getText().toString());
                         params.put("password", input_password.getText().toString());
+                        params.put("phone", input_phone.getText().toString());
+                        params.put("name", input_name.getText().toString());
+                        params.put("sex", input_sex.getText().toString());
+                        params.put("age", input_age.getText().toString());
 
                         return params;
                     }
@@ -85,5 +99,13 @@ public class SignUp extends AppCompatActivity {
                 MySingleton.getInstance().addToRequestQueue(myReq);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent i=new Intent(SignUp.this,SignIn.class);
+        startActivity(i);
+        finish();
     }
 }

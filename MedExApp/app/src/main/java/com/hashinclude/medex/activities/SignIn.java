@@ -1,12 +1,10 @@
-package com.hashinclude.medex;
+package com.hashinclude.medex.activities;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.provider.SyncStateContract;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +14,9 @@ import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.hashinclude.medex.Constants;
+import com.hashinclude.medex.MySingleton;
+import com.hashinclude.medex.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -46,7 +47,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
         switch(v.getId()){
             case R.id.sign_in_done:
                 StringRequest myReq = new StringRequest(Request.Method.POST,
-                        "http://192.168.43.201/MedEx/public/api/login",
+                        Constants.BASE_URL+"MedEx/laravel/public/api/login",
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -70,10 +71,16 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                             public void onErrorResponse(VolleyError error) {
                                 //Log.i("k", new String(error.networkResponse.data));
                                 try {
-                                    if(new JSONObject(new String(error.networkResponse.data)).getString("error").contentEquals("invalid credentials")){
-                                        Toast.makeText(SignIn.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
-                                    } else{
-                                    Toast.makeText(SignIn.this, "Something went wrong", Toast.LENGTH_SHORT).show();}
+                                    if(error.networkResponse == null || error.networkResponse.data == null){
+                                        Toast.makeText(SignIn.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                    }
+                                    else if(new JSONObject(new String(error.networkResponse.data)).has("error")){
+                                        if(new JSONObject(new String(error.networkResponse.data)).getString("error").contentEquals("invalid credentials")){
+                                            Toast.makeText(SignIn.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                    else{
+                                        Toast.makeText(SignIn.this, "Something went wrong", Toast.LENGTH_SHORT).show();}
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -92,6 +99,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
             case R.id.sign_in_register:
                 Intent intent = new Intent(SignIn.this,SignUp.class);
                 startActivity(intent);
+                finish();
                 break;
         }
 

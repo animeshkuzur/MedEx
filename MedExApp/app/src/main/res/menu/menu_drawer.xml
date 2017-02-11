@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Home" />
+        <item
+            android:id="@+id/my_account"
+            android:icon="@mipmap/ic_launcher"
+            android:title="My Account" />
+        <item
+            android:id="@+id/ecommerce"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Prescriptions" />
+        <item
+            android:id="@+id/settings"
+            android:icon="@mipmap/ic_launcher"
+            android:title="Settings" />
+
+    </group>
+
+    <item
+        android:icon="@mipmap/ic_launcher"
+        android:title="Contact Us">
+        <menu>
+            <item
+                android:id="@+id/nav_email"
+                android:icon="@mipmap/ic_launcher"
+                android:title="E-mail" />
+            <item
+                android:id="@+id/nav_fb"
+                android:icon="@mipmap/ic_launcher"
+                android:title="Facebook" />
+        </menu>
+    </item>
+
+</menu>
