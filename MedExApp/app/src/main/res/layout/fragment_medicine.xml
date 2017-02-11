@@ -2,41 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Medicine"
-        android:textColor="#000"
-        android:textSize="24sp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/small_padding_horizontal"
-        />
-    <Spinner
-        android:id="@+id/name_of_medicine"
+    <FrameLayout
+        android:id="@+id/medicine_frame"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/small_padding_vertical"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Please mention the Expiry Date:"
-        android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/small_padding_vertical"
-        android:textColor="#111"
+        android:layout_height="match_parent"/>
 
-        />
-    <DatePicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/small_padding_vertical"
-
-        />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:layout_gravity="center_horizontal"
-        />
 </LinearLayout>
