@@ -16,14 +16,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 
 import com.hashinclude.medex.R;
-
-import ducic.plumbum.com.medex.fragments.Home;
-import ducic.plumbum.com.medex.fragments.MyAccount;
-import ducic.plumbum.com.medex.fragments.Prescriptions;
-import ducic.plumbum.com.medex.fragments.Settings;
+import com.hashinclude.medex.fragments.Home;
+import com.hashinclude.medex.fragments.MyAccount;
+import com.hashinclude.medex.fragments.Prescriptions;
+import com.hashinclude.medex.fragments.Settings;
 
 import static android.view.View.GONE;
-import static ducic.plumbum.com.medex.R.id.my_account;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     FrameLayout view;
@@ -78,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.home) {
             fragment = new Home();
-        } else if (id == my_account) {
+        } else if (id == R.id.my_account) {
             fragment = new MyAccount();
         } else if (id == R.id.ecommerce) {
             fragment = new Prescriptions();

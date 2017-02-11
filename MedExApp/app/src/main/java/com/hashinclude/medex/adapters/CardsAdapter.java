@@ -9,11 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.hashinclude.medex.R;
+import com.hashinclude.medex.models.Cards;
 
 import java.util.List;
-
-import ducic.plumbum.com.medex.R;
-import ducic.plumbum.com.medex.models.Cards;
 
 /**
  * Created by pankaj on 11/2/17.

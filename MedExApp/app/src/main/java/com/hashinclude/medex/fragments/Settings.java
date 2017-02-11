@@ -12,8 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.hashinclude.medex.R;
 
-import ducic.plumbum.com.medex.R;
 
 /**
  * Created by pankaj on 11/2/17.
