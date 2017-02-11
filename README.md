@@ -11,7 +11,7 @@ The users get points which they can later redeem for discount coupons and the me
 Getting Started
 
 Clone the repository.
-It has two folders: laravel and MedExApp.
+It has two folders: laravel and MedExApp.  
 Laravel: The backened server is Laravel based and the setup is same as provided here:https://github.com/laravel/laravel
 MedExApp: THis is the ANdroid Studio based project. To run the app directly, there is a sample available in the build folder.
 
