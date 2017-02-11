@@ -33,6 +33,12 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+        SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SignIn.this);
+        if (sp.contains("token")){
+            Intent intent = new Intent(SignIn.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
         input_email = (EditText) findViewById(R.id.input_email);
         input_password = (EditText) findViewById(R.id.input_password);
         sign_in_done = (Button) findViewById(R.id.sign_in_done);
@@ -59,7 +65,9 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                                         editor.putString("token", jO.getString("token"));
                                         editor.putString("name", jO.getJSONArray("info").getJSONObject(0).getString("name"));
                                         editor.apply();
-                                        Toast.makeText(SignIn.this, sp.getString("name","default")+" success", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(SignIn.this, MainActivity.class);
+                                        startActivity(intent);
+                                        finish();
                                     }
                                 } catch (JSONException ignored) {
                                 }
