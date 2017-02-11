@@ -57,7 +57,14 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                                         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(SignIn.this);
                                         SharedPreferences.Editor editor = sp.edit();
                                         editor.putString("token", jO.getString("token"));
+                                        editor.putString("id", jO.getJSONArray("info").getJSONObject(0).getString("id"));
                                         editor.putString("name", jO.getJSONArray("info").getJSONObject(0).getString("name"));
+                                        editor.putString("email", jO.getJSONArray("info").getJSONObject(0).getString("email"));
+                                        editor.putString("image", jO.getJSONArray("info").getJSONObject(0).getString("image"));
+                                        editor.putString("sex", jO.getJSONArray("info").getJSONObject(0).getString("sex"));
+                                        editor.putString("phone", jO.getJSONArray("info").getJSONObject(0).getString("phone"));
+                                        editor.putString("age", jO.getJSONArray("info").getJSONObject(0).getString("age"));
+
                                         editor.apply();
                                         Toast.makeText(SignIn.this, sp.getString("name","default")+" success", Toast.LENGTH_SHORT).show();
                                     }
