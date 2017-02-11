@@ -1,0 +1,54 @@
+/vendor
+/node_modules
+/public/storage
+Homestead.yaml
+Homestead.json
+.env
+*.iml
+MedExApp/.gradle
+MedExApp/local.properties
+MedExApp/.idea/workspace.xml
+MedExApp/.idea/libraries
+MedExApp/.DS_Store
+MedExApp/build
+MedExApp/captures
+MedExApp/.externalNativeBuild
+MedExApp/*.iml
+
+# Built application files
+/*/build/
+
+# Crashlytics configuations
+MedExApp/com_crashlytics_export_strings.xml
+
+# Local configuration file (sdk path, etc)
+MedExApp/local.properties
+
+# Gradle generated files
+MedExApp/.gradle/
+
+# Signing files
+MedExApp/.signing/
+
+# User-specific configurations
+MedExApp/.idea/libraries/
+MedExApp/.idea/workspace.xml
+MedExApp/.idea/tasks.xml
+MedExApp/.idea/.name
+MedExApp/.idea/compiler.xml
+MedExApp/.idea/copyright/profiles_settings.xml
+MedExApp/.idea/encodings.xml
+MedExApp/.idea/misc.xml
+MedExApp/.idea/modules.xml
+MedExApp/.idea/scopes/scope_settings.xml
+MedExApp/.idea/vcs.xml
+MedExApp/*.iml
+
+# OS-specific files
+MedExApp/.DS_Store
+MedExApp/.DS_Store?
+MedExApp/._*
+MedExApp/.Spotlight-V100
+MedExApp/.Trashes
+MedExApp/ehthumbs.db
+MedExApp/Thumbs.db
