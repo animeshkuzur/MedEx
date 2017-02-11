@@ -3,7 +3,6 @@ package com.hashinclude.medex.activities;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.hashinclude.medex.R;
 import com.hashinclude.medex.fragments.Home;
+import com.hashinclude.medex.fragments.Medicines;
 import com.hashinclude.medex.fragments.MyAccount;
 import com.hashinclude.medex.fragments.Prescriptions;
 import com.hashinclude.medex.fragments.Settings;
@@ -24,8 +25,9 @@ import com.hashinclude.medex.fragments.Settings;
 import static android.view.View.GONE;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    FrameLayout view;
+    public FrameLayout view;
     ImageButton slide;
+    public TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +105,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+                ft.replace(R.id.content_frame, new Medicines());
+                ft.commit();
+
+                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+                drawer.closeDrawer(GravityCompat.START);
             }
         });
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -131,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
 //        drawer.openDrawer(GravityCompat.START);
+        title = (TextView) findViewById(R.id.connect);
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         slide = (ImageButton) findViewById(R.id.slide);
