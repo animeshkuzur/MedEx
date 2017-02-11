@@ -9,7 +9,7 @@ The users get points which they can later redeem for discount coupons and the me
 
 ## Getting Started
 1. Clone the repository.<br>
-    *`git clone https://www.github.com/animeshkuzur/MedEx`<br>
+    `git clone https://www.github.com/animeshkuzur/MedEx`<br>
 2. Navigate to the build folder and copy the apk in your android phone<br>
 3. Install the apk and enjoy!
 
