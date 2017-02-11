@@ -52,7 +52,6 @@ public class SignUp extends AppCompatActivity {
                                     if (jO.has("info")){
                                         if(jO.getString("info").contentEquals("user_registered")){
 
-                                            Toast.makeText(SignUp.this, "Registration successful!", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(SignUp.this, SignIn.class);
                                             startActivity(intent);
                                             finish();
