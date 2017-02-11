@@ -72,8 +72,8 @@ public class Home extends Fragment {
                 (CollapsingToolbarLayout) rootView.findViewById(R.id.collapsing_toolbar);
         TextView title = (TextView) rootView.findViewById(R.id.title_collapsable);
         TextView subtitle = (TextView) rootView.findViewById(R.id.subtitle_collapsable);
-        title.setText("Home");
-        subtitle.setText("& Health tips");
+        title.setText("");
+        subtitle.setText("");
 
 
         collapsingToolbar.setTitle(" ");
@@ -116,20 +116,20 @@ public class Home extends Fragment {
                 R.drawable.image4
         };
 
-        Cards a = new Cards("News 1", covers[0], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        Cards a = new Cards("News 1", covers[0], "Lorem ipsum dolor sit amet, consecte adipis elit. Cras et placerat neque, blandit pellentesque mauris");
         CardsList.add(a);
 
-        a = new Cards("News 2", covers[1], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        a = new Cards("News 2", covers[1], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et placerat neque, blandit pellentesque mauris");
         CardsList.add(a);
-        a = new Cards("News 3", covers[2], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        a = new Cards("News 3", covers[2], "Lorem ipsum dolor sit amet, elit. Cras et placerat neque, blandit pellentesque mauris");
         CardsList.add(a);
-        a = new Cards("News 4", covers[3], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        a = new Cards("News 4", covers[3], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras  pellentesque mauris");
         CardsList.add(a);
-        a = new Cards("News 5", covers[4], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        a = new Cards("News 5", covers[4], "Lorem ipsum dolor sit amet, consectetur et placerat neque, blandit pellentesque mauris");
         CardsList.add(a);
-        a = new Cards("News 6", covers[5], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        a = new Cards("News 6", covers[5], "Lorem adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
         CardsList.add(a);
-        a = new Cards("News 7", covers[6], "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris");
+        a = new Cards("News 7", covers[6], "Lorem Cras et placerat neque, blandit pellentesque mauris");
         CardsList.add(a);
 
         adapter.notifyDataSetChanged();

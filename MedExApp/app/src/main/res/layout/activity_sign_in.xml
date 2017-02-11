@@ -20,7 +20,9 @@
             android:text="Sign in"
             android:textSize="30dp"
             android:layout_marginTop="30dp"
-            android:id="@+id/sign_in_title"/>
+            android:id="@+id/sign_in_title"
+            android:textColor="#000"
+            />
 
         <EditText
             android:layout_width="match_parent"
@@ -39,12 +41,18 @@
             android:inputType="textPassword"
             android:id="@+id/input_password"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Done"
             android:layout_below="@+id/input_password"
-            android:layout_alignParentRight="true"
-            android:id="@+id/sign_in_done"/>
+            android:layout_centerHorizontal="true"
+            android:id="@+id/sign_in_done"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="18dp"
+            android:textColor="#fff"
+            android:background="@color/colorPrimary"
+            />
         <!--<RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
