@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="6dp"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    >
+
+    <ImageView
+        android:id="@+id/product_image"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="fitXY" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/product_image"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+
+        >
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="#000"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et placerat neque, blandit pellentesque mauris"
+            android:textColor="#111"
+            android:paddingTop="@dimen/small_padding_vertical"
+            />
+    </LinearLayout>
+</RelativeLayout>
